@@ -1,0 +1,136 @@
+/* -----------barre----------------*/
+  
+  #nav , .navig{
+    display: none;
+  }
+  body{
+    font-family: "open Sans ", sans-serif;
+  }
+  
+  
+  header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    transition: 0.5s ease;
+    background-color: #2d2a30;
+  
+  }
+  
+  
+  .nav-barre li {
+    display: inline-block;
+    
+  
+  }
+  .nav-barre li a {
+    
+    color:#fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0 10px;
+    letter-spacing: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    
+  }
+  .nav-barre li a:hover{
+    color: #d89f9f;
+  
+  }
+  
+  .active{
+    background: #2d2a30;
+  }
+  
+  .active a:hover{
+    color: #fff ;
+  
+  }
+  
+  @media only screen and (max-width: 600px){
+    header{
+        display: block;
+    }
+    .logo{
+        margin-left: 15px;
+    }
+  
+    .navig{
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        margin: 0 1rem;
+        top: 20px;
+        right: 0;
+  
+    }
+  
+  
+    .close,
+        input[type='checkbox']{
+            display: none;
+        }
+  
+    
+  
+    .nav-barre li {
+        display: none;
+        margin: 12px 0;
+        align-items: center;
+        
+        
+    }
+  
+    #nav:checked ~ ul.nav-barre li{
+        display: block;
+  
+    }
+  
+    #nav:checked ~ label.navig .open {
+        display: none;
+    }
+    #nav:checked ~ label.navig .close {
+        display: block;
+    }
+  
+    .title h3{
+        font-size: 40px;
+    }
+  
+  
+  }
+   
+
+/* VIDEO */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    font-family: "open Sans ", sans-serif;
+}
+
+.cont{
+    max-width: 900px;
+    width: 98%;
+    
+    
+}
+
+.cont video{
+    width: 100%;
+}
