@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>CPS ENSI</title>
+      <link rel="stylesheet" href="home.css">
+      <link rel="stylesheet" href="styleteam.css">
+      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    
+      <link rel="icon" href="cps.png"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  
+  </head>
+    <body>
+      <header>
+        <div class="logo">
+            <img src="cps.png"> 
+        </div>
+        <div class="navigation">
+            <input type="checkbox" id="nav">
+            <label for="nav" class="navig">
+                <img src="menu.png" alt="open" class="open">
+                <img src="close2.jpg" alt="close" class="close">
+            </label>
+            
+        
+        <ul class="nav-barre">            
+            
+              <li><a href="#home"><strong>Home</strong></a></li>
+              
+              <li><a href="#"><strong>Events</strong></a></li>
+              <li><a href="#"><strong>Gallery</strong></a></li>
+              <li><a href="#"><strong>Team</strong></a></li>
+              <li><a href="#"><strong> Get In Touch</strong></a></li>
+              
+           </ul>
+        </div>
+    </header>
+    
+    <br><br><br><br><br><br><br><br><br>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener('scroll', function() {
+          var gap = 50;
+          if (window.scrollY > gap) {
+            document.querySelector('header').classList.add('active');
+          } else {
+            document.querySelector('header').classList.remove('active');
+          }
+        });
+      });
+    </script>
+    
+    <br><br>
+      <!-- team members  -->
+      <div class="cc">
+
+      <div id="members">
+        <br>
+      <h1 align="center">Executive board 2022/2023</h1><br>
+      <br>
+      
+      <div  class="ligne">
+        <div class="milieu">
+          <div class="carte">
+            <img src="dhouha.png" style="width:100%">
+            <div class="container">
+              <h2>Dhouha Haj Taieb</h2>
+              <p>Présidente</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        <div  class="ligne">
+        <div class="colone">
+          <div  class="carte">
+            <img src="hiba.png" style="width:100%">
+            <div class="container">
+              <h2>Hiba Nahdi</h2>
+              <p>Secrétaire générale et directrice des ressources humaines</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="colone">
+          <div  class="carte">
+            <img src="abyr.png" style="width:100%">
+            <div class="container">
+              <h2>Abyr Ghazel</h2>
+              <p>Trésorière</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div  class="ligne">
+        <div class="colone">
+          <div  class="carte">
+            <img src="anis.png" style="width:100%">
+            <div class="container">
+              <h2>Med Anis Oueslati</h2>
+              <p>Responsable Logistique</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      
+        <div class="colone">
+          <div  class="carte">
+            <img src="mouadh.png" style="width:100%">
+            <div class="container">
+              <h2>Mouadh Fraj</h2>
+              <p>Responsable Media</p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+       <br>     
+      </div>
+            
+      
+ 
+    
+  </div>
+
+
+    </body>
+</html>
