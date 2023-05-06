@@ -179,8 +179,12 @@
     padding: 0;
 }
 body{
-    background: url(backgroundparticipate.jpg);
-    background-size: 280%;
+       background-color: #d89f9f;
+    background: url(participate.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode:luminosity;
+
     
 
 }
