@@ -168,26 +168,9 @@
       --green2: rgb(233, 176, 179);
       --green3: crimson;
   }
-   * {
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Rubik', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    transition: all 0.5s cubic-bezier(.37, 1.14, .26, 1.24);
-    scroll-behavior: smooth;
-  } 
+
   
-  *::selection {
-    background: var(--green);
-    color: #FFFFFF;
-  }
-  
-  html {
-    font-size: 62.5%;
-    overflow-x: hidden;
-  }
+
 
 
 /**/
