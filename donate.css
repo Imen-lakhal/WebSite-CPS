@@ -340,7 +340,8 @@ footer{
 .left .content-footer .social a span{
   height:40px;
   width:40px;
-  background: #1a1a1a;
+  
+  color: white;
   line-height: 40px;
   text-align:center;
   font-size:18px;
@@ -426,7 +427,7 @@ footer{
 .bottom center{
   padding:5px;
   font: size 0.9375em;
-  background: #fdd7d7;
+  background: #d89f9f;
 }
 .bottom center span{
   color: #656565;
