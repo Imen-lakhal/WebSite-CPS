@@ -2,9 +2,10 @@
 .about{
     width: 100%;
     padding: 78px 0px;
-    background-color: #F0F0F0;}
+    background-color: #F0F0F0;
+  }
     .about img{
-      height: : auto;
+      height:  auto;
       width: 250px;
     }
 
