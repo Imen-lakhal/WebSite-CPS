@@ -52,7 +52,7 @@ header{
   justify-content: space-around;
   padding: 20px 0;
   transition:  0.5s ease;
-  background-color: #2d2a30;
+  background-color: #202020;
   z-index: 1000;
   
 
@@ -168,12 +168,10 @@ header{
     --green2: rgb(233, 176, 179);
     --green3: crimson;
 }
- * {
+* {
   font-family: 'Open Sans', sans-serif;
   font-family: 'Rubik', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
   text-decoration: none;
   transition: all 0.5s cubic-bezier(.37, 1.14, .26, 1.24);
   scroll-behavior: smooth;
@@ -184,10 +182,10 @@ header{
   color: #FFFFFF;
 }
 
-html {
+/* html {
   font-size: 62.5%;
   overflow-x: hidden;
-}
+}  */
 /*form*/
 
 .donate-class {
@@ -273,6 +271,8 @@ html {
 .donate-class form .submit-btn:hover {
   background: var(--green2);
 }
+
+
 
 /*footer*/
 footer{

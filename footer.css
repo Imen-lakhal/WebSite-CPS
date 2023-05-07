@@ -1,7 +1,16 @@
+:root{
+  --white: #FFFFFF;
+  --red: red;
+  --green2: rgb(233, 176, 179);
+  --green3: crimson;
+}
+
+
+/*footer*/
 footer{
   margin:0;
   padding:0;
-  color:#d9d9d9;
+  color:#fffcfc;
   box-sizing: border-box;
   font-family:'poppins',sans-serif;
 }
@@ -14,15 +23,15 @@ footer{
  
 
 }
-.main-content{
+footer .main-content{
   display:flex;
 }
-.main-content .box{
+footer .main-content .box{
   flex-basis:50%;
   padding: 10px 20px ;
 
 }
-.box h2{
+footer .box h2{
   font-size: 1.125rem;
   font-weight:600;
   text-transform:uppercase;
@@ -32,7 +41,7 @@ footer{
   position: relative;
 
 }
-.box .content-footer::before{
+footer .box .content-footer::before{
   position:absolute;
   content:'';
   top: -10px;
@@ -40,29 +49,31 @@ footer{
   width: 100%;
   background: #1a1a1a;
 }
-.box .content-footer::after{
+footer  .box .content-footer::after{
   position:absolute ;
   content:'';
   height:2px;
   width: 15%;
-  background: #f12020;
+  /* background: #f12020; */
+  background: var(--green3);
   top:-10px;
 
 }
-.left .content-footer p{
+footer  .left .content-footer p{
   text-align: justify;
 }
-.left .content-footer .social{
+footer .left .content-footer .social{
   margin:20px 0 0;
 
 }
-.left .content-footer .social a{
+footer  .left .content-footer .social a{
   padding: 0 2px;
 }
-.left .content-footer .social a span{
+footer  .left .content-footer .social a span{
   height:40px;
   width:40px;
-  background: #1a1a1a;
+  
+  color: white;
   line-height: 40px;
   text-align:center;
   font-size:18px;
@@ -71,10 +82,11 @@ footer{
 
 
 }
-.left  .content-footer .social a span:hover{
-  background: #c83131;
+footer .left  .content-footer .social a span:hover{
+  /* background: #c83131; */
+  background: var(--green3);
 }
-.center .content-footer .fas{
+footer  .center .content-footer .fas{
   font-size: 1.4375rem;
   background: #4c4b4b;
   height: 45px;
@@ -86,75 +98,79 @@ footer{
   cursor: pointer;
 
 }
-.center .content-footer .fas:hover{
-  background:#f12020;
+
+footer   .center .content-footer .fas:hover{
+  /* background:#f12020; */
+  background: var(--green3);
 }
-.center .content-footer .text{
+footer  .center .content-footer .text{
   font-size:1.0625rem;
   font-weight: 500;
   padding-left: 10px;
 }
-.center .content-footer .phone{
+footer  .center .content-footer .phone{
   margin: 10px 0;
 }
-.right form .text{
+footer   .right form .text{
   font-size:1.0625rem;
   margin-bottom:2px;
   color:#656565;
 
 }
-.right form .msg{
+footer  .right form .msg{
   margin-top:10px;
 
 }
-.right form input, .right form textarea{
+footer  .right form input, .right form textarea{
   width:100%;
   font-size: 1.0625rem;
   background: #151515;
   padding-left: 10px;
   border:1px solid #222
 }
-.right form input:focus,
- .right form textarea:focus{
+footer  .right form input:focus,
+footer   .right form textarea:focus{
   outline-color:#c15466;
  }
 
-.right form input{
+ footer   .right form input{
   height: 35px;
 }
-.right form .btn{
+footer  .right form .btn{
   font-family: 'Courier New', Courier, monospace;
   margin-top: 10px;
 }
-.right form .btn button{
+footer   .right form .btn button{
   height:40px;
   width:100%;
   border:none;
   outline:none;
   border-radius: 0;
-  background: #f12020;
+  /* background: #f12020; */
+  background: var(--green3);
   font-size:1.0625rem;
   font-weight: 500;
   cursor: pointer;
   transition: .3s;
 }
-.right form .btn button:hover{
-  background: #4c4b4b;
+footer  .right form .btn button:hover{
+  background: #cb8a8a;
 
 }
-.bottom center{
+footer   .bottom center{
   padding:5px;
   font: size 0.9375em;
-  background: #151515;
+  background: #d89f9f;
 }
-.bottom center span{
+footer  .bottom center span{
   color: #656565;
 }
-.bottom center a {
-  color: #f12012;
+footer  .bottom center a {
+  /* color: #f12012; */
+  color: var(--green3);
   text-decoration: none;
 }
-.bottom center a:hover{
+footer   .bottom center a:hover{
   text-decoration: underline;
 }
 /*mobile*/
@@ -163,15 +179,12 @@ footer{
     position:relative;
     bottom: 0px;
   }
-  .main-content{
+  footer  .main-content{
     flex-wrap: wrap;
     flex-direction: column;
 
   }
-  .main-content .box{
+  footer  .main-content .box{
     margin: 5px  0;
   }
 }
-
-
-
