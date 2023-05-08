@@ -213,7 +213,10 @@ header{
   --green2: rgb(233, 176, 179);
   --green3: crimson;
 }
-
+.goto{
+  text-decoration: none;
+  color: #fff;
+}
 /*footer*/
 footer{
   margin:0;
