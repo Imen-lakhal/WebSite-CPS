@@ -182,7 +182,7 @@ h1{
   position: relative;
   margin: 40px 0;
   /* color:rgb(240, 108, 108); */
-  color:rgba(168, 17, 17, 0.909); 
+  color:crimson; 
   
 }
 h1::before{
@@ -191,7 +191,7 @@ h1::before{
   width: 100px;
   height: 3px;
   /* background-color: rgba(210, 51, 51, 0.648); */
-  background-color: #ab6363;
+  background-color: crimson;
    bottom: -10px;
    left: 50%;
    transform: translateX(-50%);
@@ -221,7 +221,7 @@ h1::before{
 }
 h3{
   height: 100%;
-   background-color: rgba(172, 59, 59, 0.648); 
+   background-color: crimson; 
   
   line-height: 60px;
   padding: 0 50px;
