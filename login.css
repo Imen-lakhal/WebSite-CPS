@@ -243,3 +243,9 @@ section .contentBox .formBox h5{
 
     }
 }
+
+#erreur{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: red;
+    font-size: 50px;
+}

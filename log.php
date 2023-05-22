@@ -1,3 +1,40 @@
+<?php 
+ //Nous allons démarrer la session avant toute chose
+   session_start() ;
+  if(isset($_POST['boutton-valider'])){ // Si on clique sur le boutton , alors :
+    //Nous allons verifiér les informations du formulaire
+    if(isset($_POST['email']) && isset($_POST['mdp'])) { //On verifie ici si l'utilisateur a rentré des informations
+      //Nous allons mettres l'email et le mot de passe dans des variables
+      $email = $_POST['email'] ;
+      $password = $_POST['mdp'] ;
+      $erreur = "" ;
+       //Nous allons verifier si les informations entrée sont correctes
+       //Connexion a la base de données
+       $nom_serveur = "localhost";
+       $utilisateur = "root";
+       $mot_de_passe ="";
+       $nom_base_données ="utilisateur" ;
+       $con = mysqli_connect($nom_serveur , $utilisateur ,$mot_de_passe , $nom_base_données);
+       //requete pour selectionner  l'utilisateur qui a pour email et mot de passe les identifiants qui ont été entrées
+        $req = mysqli_query($con , "SELECT * FROM `login` WHERE email = '$email' AND password ='$password' ") ;
+        $num_ligne = mysqli_num_rows($req) ;//Compter le nombre de ligne ayant rapport a la requette SQL
+        if($num_ligne > 0){
+            header("Location:get-involved.html") ;//Si le nombre de ligne est > 0 , on sera redirigé vers la page bienvenu
+            // Nous allons créer une variable de type session qui vas contenir l'email de l'utilisateur
+            $_SESSION['email'] = $email ;
+        }else {//si non
+            $erreur = "Adresse Mail ou Mots de passe incorrectes !";
+        }
+    }
+  }
+?>
+
+
+
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +70,7 @@
           <li><a href="home.html"><strong>Home</strong></a></li>
               
           <li><a href="events.html"><strong>Events</strong></a></li>
-          <li><a href="pics.html"><strong>Gallery</strong></a></li>
+          <li><a href="gallery.html"><strong>Gallery</strong></a></li>
           <li><a href="team.html"><strong>Team</strong></a></li>
           <li><a href="getintouch.html"><strong> Get In Touch</strong></a></li>
               
@@ -70,26 +107,32 @@
         <div class="contentBox">
             <div class="formBox">
                 <h2>Login To Donate</h2>
-                <form action="#">
+                <?php 
+       if(isset($erreur)){// si la variable $erreur existe , on affiche le contenu ;
+           echo "<p id= erreur>".$erreur."</p>"  ;
+       }
+       ?>
+                <form  action="" method="POST">
                     <div class="inputBx">
                         <span>Email</span>
-                        <input type="text">
+                        <input type="text" name="email">
 
                     </div>
                     <div class="inputBx">
                         <span>Password</span>
-                        <input type="password">
+                        <input type="password" name="mdp">
 
                     </div>
                     <div class="remember">
                         <label><input type="checkbox">Remember Me</label>
                     </div>
                     <div class="inputBx">
-                        <input type="submit" value="Log In" class="submit">
+                        <input type="submit" value="Log In" class="submit" name="boutton-valider">
                     </div>
                     <div class="inputBx">
                         <p>Don't have an account ?  <a href="#" >Sign</a></p>
                     </div>
+
                 </form>
             </div>
         </div>
