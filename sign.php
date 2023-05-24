@@ -36,6 +36,7 @@
                     if (count($errors)>0) {
                      foreach ($errors as  $error) {
                          echo "<div class='alert alert-danger'>$error</div>";
+                         
                      }
                     }else{
                      
@@ -48,6 +49,7 @@
                       mysqli_stmt_bind_param($stmt, "ssss",  $firstname ,$lastname, $email, $passwordHash);
                          mysqli_stmt_execute($stmt);
                          echo "<div class='alert alert-success'>You are registered successfully.</div>";
+                    
                      }else{
                          die("Something went wrong");
                      }
@@ -146,27 +148,27 @@
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
                     <div class="inputBx">
                         <span>First Name</span>
-                        <input type="text" class="form-control" name="firstname">
+                        <input type="text"  name="firstname">
 
                     </div>
                     <div class="inputBx">
                         <span>Last Name</span>
-                        <input type="text" class="form-control" name="lastname" required>
+                        <input type="text"  name="lastname" >
 
                     </div>
                     <div class="inputBx">
                         <span>Email</span>
-                        <input type="email" class="form-control" name="email" required>
+                        <input type="email"  name="email" >
 
                     </div>
                     <div class="inputBx">
                         <span>Password</span>
-                        <input type="password" class="form-control" name="password"  required>
+                        <input type="password"  name="password"  >
 
                     </div>
                     <div class="inputBx">
                         <span>Confirm Password</span>
-                        <input type="password" class="form-control" name="passwordconfirm" required>
+                        <input type="password" name="passwordconfirm" >
 
                     </div>
                     

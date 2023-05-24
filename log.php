@@ -29,8 +29,39 @@
   }
 ?>
 
-
-
+<!--      php contactfooter         -->
+<?php
+                  if (isset($_POST["submit"])){
+                    $emailF = $_POST["emailF"];
+                    $messageF= $_POST["messageF"];
+                    //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
+                    $errors = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
+                   if(empty($emailF) OR empty($messageF)) {
+                     array_push($errors,"All fields are required");
+                    }
+                    if (!filter_var($emailF, FILTER_VALIDATE_EMAIL)) {
+                     array_push($errors, "Email is not valid");
+                    }
+                    require_once "database.php";
+                    if (count($errors)>0) {
+                     foreach ($errors as  $error) {
+                     }
+                    }else{
+                     $sql = "INSERT INTO footercontact ( emailF, messageF) VALUES (?, ? )";
+                     $stmt = mysqli_stmt_init($conn);
+                     //This code initializes a new mysqli_stmt object and assigns it to the $stmt variable. The mysqli_stmt_init() function is used to initialize a new statement object, which is then used to prepare and execute SQL statements with parameterized queries.
+                     $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
+                     if ($prepareStmt) {
+                      mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
+                         mysqli_stmt_execute($stmt);
+                         
+                     }else{
+                         die("Something went wrong");
+                     }
+                    }
+                   
+                  }
+                ?>
 
 
 
@@ -178,20 +209,26 @@
        <div class="right box">
          <h2>Contact Us</h2>
          <div class="content-footer">
-           <form action="#">
-             <div class="email">
-               <div class="text">Email *</div>
-               <input type="email" required>
-             </div>
-             <div class="msg">
-               <div class="text">Message *</div>
-               <textarea rows="2" cols="25" required></textarea>
-             </div>
-             <div class="btn">
-               <button typr="submit">Send</button>
-             </div>
-  
-           </form>
+         <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
+   
+   <div class="email">
+     <div class="text">Email *</div>
+     <input type="email" name="emailF" >
+   </div>
+   <div class="msg">
+     <div class="text">Message *</div>
+     <textarea rows="2" cols="25" name="messageF"></textarea>
+   </div>
+   <div class="btn">
+     <button type="submit" name="submit">Send</button>
+   </div>
+   <?php 
+if(isset($errors)){// si la variable $erreur existe , on affiche le contenu ;
+foreach($errors as $err)  
+  echo "<p id= error >".$err."</p>"  ;
+} 
+?>
+ </form>
          </div>
        </div>
    </div>

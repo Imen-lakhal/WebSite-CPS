@@ -31,12 +31,12 @@
 
 <ul class="nav-barre">            
     
-      <li><a href="#home"><strong>Home</strong></a></li>
-      
-      <li><a href="#"><strong>Events</strong></a></li>
-      <li><a href="#"><strong>Gallery</strong></a></li>
-      <li><a href="#"><strong>Team</strong></a></li>
-      <li><a href="#"><strong> Get In Touch</strong></a></li>
+  <li><a href="home.php"><strong>Home</strong></a></li>
+              
+  <li><a href="events.php"><strong>Events</strong></a></li>
+  <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+  <li><a href="team.php"><strong>Team</strong></a></li>
+  <li><a href="getintouch.php"><strong> Get In Touch</strong></a></li>
       
    </ul>
 </div>
