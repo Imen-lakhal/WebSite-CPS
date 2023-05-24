@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 if (isset($_POST['boutton-valider'])) {
@@ -34,6 +35,45 @@ if (isset($_POST['boutton-valider'])) {
 }
 ?>
 
+=======
+             
+              
+              
+              <!-- ----- php footer form------ -->
+              <?php
+                  if (isset($_POST["submit"])){
+                    $emailF = $_POST["emailF"];
+                    $messageF= $_POST["messageF"];
+                    //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
+                    $success = "";
+                    $errors = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
+                   if(empty($emailF) OR empty($messageF)) {
+                     array_push($errors,"All fields are required");
+                    }
+                    if (!filter_var($emailF, FILTER_VALIDATE_EMAIL)) {
+                     array_push($errors, "Email is not valid");
+                    }
+                    require_once "database.php";
+                    if (count($errors)>0) {
+                     foreach ($errors as  $error) {
+                     }
+                    }else{
+                     $sql = "INSERT INTO footercontact ( emailF, messageF) VALUES (?, ? )";
+                     $stmt = mysqli_stmt_init($conn);
+                     //This code initializes a new mysqli_stmt object and assigns it to the $stmt variable. The mysqli_stmt_init() function is used to initialize a new statement object, which is then used to prepare and execute SQL statements with parameterized queries.
+                     $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
+                     if ($prepareStmt) {
+                      mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
+                         mysqli_stmt_execute($stmt);
+                         $success = "your message was successfully sent!";
+                     }else{
+                         die("Something went wrong");
+                     }
+                    }
+                   
+                  }
+                ?>
+>>>>>>> 583c9b8931aa31e5d1441158b5a3c052a7dffea9
 
 
 
@@ -76,12 +116,14 @@ if (isset($_POST['boutton-valider'])) {
     
     <ul class="nav-barre">            
         
-      <li><a href="home.html"><strong>Home</strong></a></li>
+      <li><a href="home.php"><strong>Home</strong></a></li>
               
-      <li><a href="events.html"><strong>Events</strong></a></li>
-      <li><a href="pics.html"><strong>Gallery</strong></a></li>
-      <li><a href="team.html"><strong>Team</strong></a></li>
-      <li><a href="getintouch.html"><strong> Get In Touch</strong></a></li>
+              
+            <li><a href="events.php"><strong>Events</strong></a></li>
+              <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+              <li><a href="team.php"><strong>Team</strong></a></li>
+              <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+              <li><a href="log.php"><strong> Log in</strong></a></li>
           
        </ul>
     </div>
@@ -225,8 +267,8 @@ if (isset($_POST['boutton-valider'])) {
           <p>Stay connected
            Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
            <div class="social">
-             <a href ="#"><span class="fab fa-facebook-f"></span></a>
-             <a href ="#"><span class="fab fa-instagram"></span></a>
+           <a href ="https://www.facebook.com/CPSENSI" target="_blank"><span class="fab fa-facebook-f"></span></a>
+             <a href ="https://www.instagram.com/cps.ensi/" target="_blank"><span class="fab fa-instagram"></span></a>
            </div>
           
          </div>
@@ -255,20 +297,29 @@ if (isset($_POST['boutton-valider'])) {
      <div class="right box">
        <h2>Contact Us</h2>
        <div class="content-footer">
-         <form action="#">
-           <div class="email">
-             <div class="text">Email *</div>
-             <input type="email" required>
-           </div>
-           <div class="msg">
-             <div class="text">Message *</div>
-             <textarea rows="2" cols="25" required></textarea>
-           </div>
-           <div class="btn">
-             <button typr="submit">Send</button>
-           </div>
-
-         </form>
+       <form action=""  method="post">
+   
+   <div class="email">
+     <div class="text">Email *</div>
+     <input type="email" name="emailF" >
+   </div>
+   <div class="msg">
+     <div class="text">Message *</div>
+     <textarea rows="2" cols="25" name="messageF"></textarea>
+   </div>
+   <div class="btn">
+     <button type="submit" name="submit">Send</button>
+   </div>
+   <?php 
+       if(isset($errors)){// si la variable $erreur existe , on affiche le contenu ;
+        foreach($errors as $err)  
+          echo "<p id= error >".$err."</p>"  ;
+       } 
+    ?>
+    <?php if (!empty($success)): ?>
+  <p><?php echo $success; ?></p>
+<?php endif; ?>
+ </form>
        </div>
      </div>
  </div>

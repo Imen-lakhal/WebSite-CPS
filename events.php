@@ -1,3 +1,39 @@
+              <?php
+                  if (isset($_POST["submit"])){
+                    $emailF = $_POST["emailF"];
+                    $messageF= $_POST["messageF"];
+                    //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
+                    $success = "";
+                    $errors = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
+                   if(empty($emailF) OR empty($messageF)) {
+                     array_push($errors,"All fields are required");
+                    }
+                    if (!filter_var($emailF, FILTER_VALIDATE_EMAIL)) {
+                     array_push($errors, "Email is not valid");
+                    }
+                    require_once "database.php";
+                    if (count($errors)>0) {
+                     foreach ($errors as  $error) {
+                     }
+                    }else{
+                     $sql = "INSERT INTO footercontact ( emailF, messageF) VALUES (?, ? )";
+                     $stmt = mysqli_stmt_init($conn);
+                     //This code initializes a new mysqli_stmt object and assigns it to the $stmt variable. The mysqli_stmt_init() function is used to initialize a new statement object, which is then used to prepare and execute SQL statements with parameterized queries.
+                     $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
+                     if ($prepareStmt) {
+                      mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
+                         mysqli_stmt_execute($stmt);
+                         $success = "your message was successfully sent!";
+                     }else{
+                         die("Something went wrong");
+                     }
+                    }
+                   
+                  }
+                ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,12 +68,13 @@
         
         <ul class="nav-barre">            
             
-          <li><a href="home.html"><strong>Home</strong></a></li>
+        <li><a href="home.php"><strong>Home</strong></a></li>
               
-          <li><a href="events.html"><strong>Events</strong></a></li>
-          <li><a href="pics.html"><strong>Gallery</strong></a></li>
-          <li><a href="team.html"><strong>Team</strong></a></li>
-          <li><a href="getintouch.html"><strong> Get In Touch</strong></a></li>
+        <li><a href="events.php"><strong>Events</strong></a></li>
+              <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+              <li><a href="team.php"><strong>Team</strong></a></li>
+              <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+              <li><a href="log.php"><strong> Log in</strong></a></li>
               
            </ul>
         </div>
@@ -74,7 +111,7 @@
           <p class="card__text">دفيهم في شتاهم خاترهم مستحقين لشنوا يقيهم من البرد و ماهمش منجمين يقاومو الصقعة, صغار كبار نساء و رجال..
             كل واحد فينا قادر باش يفرح الناس هاذيا حتى بالقليل ما يبخلش عليهم ، اللي عندو دبش معاش يستعملو ولا بطانيات ينجم يجيبهملنا و اللي يحب يعاون حتى بالفلوس زادة  و ربي يبارك لكم .</p>
             <br><br>
-          <button class="card__btn"><a class="goto" href="participate.html">Contact Us</a></button>
+          <button class="card__btn"><a class="goto" href="participate.php">participate</a></button>
         </div>
       </div>
 
@@ -89,7 +126,7 @@
           <p class="card__text"> مفماش احلى من ضحكة صغير و فرحتو اللي يراك مثال و انت تحاول من شيرتك تكون قدوة ليه .
           لعبنا شطحنا لونا و حكينا و فهمنا robot شيعمل و هكاكا تعدا نهار مزيان باش يقعد في بالنا كلنا .</p>
           <br><br>
-          <button class="card__btn"><a class="goto" href="participate.html">Contact Us</a></button>
+          <button class="card__btn"><a class="goto" href="participate.php">participate</a></button>
         </div>
       </div>
 
@@ -104,7 +141,7 @@
           <p class="card__text"> مفماش احلى من ضحكة صغير و فرحتو اللي يراك مثال و انت تحاول من شيرتك تكون قدوة ليه .
           لعبنا شطحنا لونا و حكينا و فهمنا robot شيعمل و هكاكا تعدا نهار مزيان باش يقعد في بالنا كلنا .</p>
           <br><br>
-          <button class="card__btn"><a class="goto" href="participate.html">Contact Us</a></button>
+          <button class="card__btn"><a class="goto" href="participate.php">participate</a></button>
         </div>
       </div>
 
@@ -118,7 +155,7 @@
           
           <p class="card__text">"Une minute de secourisme, une vie sauvée"<br>La formation aux gestes de premiers secours est une compétence essentielle pour être capable d'intervenir en cas d'urgence.
             <br><br>
-            <button class="card__btn"><a class="goto" href="participate.html">Contact Us</a></button>
+            <button class="card__btn"><a class="goto" href="participate.php">participate</a></button>
         </div>
       </div>
 
@@ -132,7 +169,7 @@
           
           <p class="card__text">كبار السن هم فرحة الأيام ورائحتها الطيبة و معنى الحياة اللهم أمد في اعمارهم و أدم عليهم الصحة والعافي"</p>
           <br><br>
-          <button class="card__btn"><a class="goto" href="participate.html">Contact Us</a></button>
+          <button class="card__btn"><a class="goto" href="participate.php">participate</a></button>
         </div>
       </div>
 
@@ -146,7 +183,7 @@
          
           <p class="card__text">A l'occasion de la journée nationale du don du sang, notre evenement a pour objectif de consacrer l'importance du don de sang dans la sauvegarde de la vie humaine et de sensibiliser davantage l'étudiant à prendre l'initiative d'une telle action et à renforcer en lui l'esprit de la solidarité.</p>
           <br><br>
-          <button class="card__btn"><a class="goto" href="participate.html">Contact Us</a></button>
+          <button class="card__btn"><a class="goto" href="participate.php">participate</a></button>
         </div>
       </div>
 
@@ -183,8 +220,8 @@
           <p>Stay connected
            Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
            <div class="social">
-             <a href ="#"><span class="fab fa-facebook-f"></span></a>
-             <a href ="#"><span class="fab fa-instagram"></span></a>
+           <a href ="https://www.facebook.com/CPSENSI" target="_blank"><span class="fab fa-facebook-f"></span></a>
+             <a href ="https://www.instagram.com/cps.ensi/" target="_blank"><span class="fab fa-instagram"></span></a>
            </div>
           
          </div>
@@ -212,20 +249,29 @@
      <div class="right box">
        <h2>Contact Us</h2>
        <div class="content-footer">
-         <form action="#">
-           <div class="email">
-             <div class="text">Email *</div>
-             <input type="email" required>
-           </div>
-           <div class="msg">
-             <div class="text">Message *</div>
-             <textarea rows="2" cols="25" required></textarea>
-           </div>
-           <div class="btn">
-             <button typr="submit">Send</button>
-           </div>
-
-         </form>
+       <form action=""  method="post">
+   
+   <div class="email">
+     <div class="text">Email *</div>
+     <input type="email" name="emailF" >
+   </div>
+   <div class="msg">
+     <div class="text">Message *</div>
+     <textarea rows="2" cols="25" name="messageF"></textarea>
+   </div>
+   <div class="btn">
+     <button type="submit" name="submit">Send</button>
+   </div>
+   <?php 
+       if(isset($errors)){// si la variable $erreur existe , on affiche le contenu ;
+        foreach($errors as $err)  
+          echo "<p id= error >".$err."</p>"  ;
+       } 
+    ?>
+    <?php if (!empty($success)): ?>
+  <p><?php echo $success; ?></p>
+<?php endif; ?>
+ </form>
        </div>
      </div>
  </div>

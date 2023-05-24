@@ -32,12 +32,13 @@
     
     <ul class="nav-barre">   
 
-      <li><a href="home.html"><strong>Home</strong></a></li>
+    <li><a href="home.php"><strong>Home</strong></a></li>
               
-      <li><a href="events.html"><strong>Events</strong></a></li>
-      <li><a href="pics.html"><strong>Gallery</strong></a></li>
-      <li><a href="team.html"><strong>Team</strong></a></li>
-      <li><a href="getintouch.html"><strong> Get In Touch</strong></a></li>
+              <li><a href="events.php"><strong>Events</strong></a></li>
+              <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+              <li><a href="team.php"><strong>Team</strong></a></li>
+              <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+              <li><a href="log.php"><strong> Log out</strong></a></li>
           
        </ul>
     </div>
@@ -126,8 +127,8 @@
           <p>Stay connected
            Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
            <div class="social">
-             <a href ="#"><span class="fab fa-facebook-f"></span></a>
-             <a href ="#"><span class="fab fa-instagram"></span></a>
+           <a href ="https://www.facebook.com/CPSENSI"><span class="fab fa-facebook-f"></span></a>
+             <a href ="https://www.instagram.com/cps.ensi/"><span class="fab fa-instagram"></span></a>
            </div>
           
          </div>

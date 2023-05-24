@@ -244,8 +244,17 @@ section .contentBox .formBox h5{
     }
 }
 
-#erreur{
+#erreur,#error{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: red;
+<<<<<<< HEAD
     
+=======
+    font-size: 20px;
+}
+#sub{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(4, 206, 17);
+    font-size: 25px;
+>>>>>>> 583c9b8931aa31e5d1441158b5a3c052a7dffea9
 }
