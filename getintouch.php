@@ -1,3 +1,43 @@
+<?php 
+session_start() ;
+if(isset($_POST['boutton-valider'])){ 
+if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])){
+       $nom_serveur = "localhost";
+       $utilisateur = "root";
+       $mot_de_passe ="";
+       $nom_base_données ="utilisateur" ;
+
+       $e= $_POST['name'];
+       $n= $_POST['email'];
+       $p= $_POST['subject'];
+       $m= $_POST['message'];
+       
+       $con = new mysqli($nom_serveur , $utilisateur ,$mot_de_passe , $nom_base_données);
+        if($con -> connect_error){
+            die("connection non etablie : " .$con -> connect_error);
+        }
+        $requet="INSERT INTO getintouch(name,email,subject,message) values ('$e','$n','$p','$m')";
+        
+        if (empty($e) || empty($n) || empty($p) || empty($m) ) {
+          $erreur= "All fields are requiered !";
+        }
+        else if ($con->query($requet) === true) {
+          $msg = "Your Message Successfully Sent!";
+      } 
+
+
+         }
+         mysqli_close($con);
+
+        }
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +106,12 @@
     <div class="contact" id="contact">
         <h1>CONTACT Us</h1>
         <br>
+        <?php 
+       if(isset($erreur)){// si la variable $erreur existe , on affiche le contenu ;
+           echo "<p id= erreur >".$erreur."</p>"  ;
+       }
+       ?>
+       <br>
         <div class="contactcontanner">
             
             <div class="contanner">
@@ -106,7 +152,12 @@
                         <input type="email" name="email" placeholder="EMAIL" required>
                         <input type="text" name="subject" placeholder="SUBJECT" required>
                         <textarea type="message" name="message" id="inputbox"  cols="30" rows="5" placeholder="MESSAGE" required></textarea>
-                        <button type="submit">SEND MESSAGE</button>
+                        <button type="submit" name='boutton-valider'>SEND MESSAGE</button><br>
+                        <?php 
+       if(isset($msg)){// si la variable $msg existe , on affiche le contenu ;
+           echo "<p id=msg align=center>".$msg."</p>"  ;
+       }
+       ?>
     
                     </form>
                 </div>
@@ -183,7 +234,7 @@
              <textarea rows="2" cols="25" required></textarea>
            </div>
            <div class="btn">
-             <button typr="submit">Send</button>
+             <button type="submit" >Send</button>
            </div>
 
          </form>

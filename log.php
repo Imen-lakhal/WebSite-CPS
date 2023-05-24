@@ -16,7 +16,7 @@
        $nom_base_données ="utilisateur" ;
        $con = mysqli_connect($nom_serveur , $utilisateur ,$mot_de_passe , $nom_base_données);
        //requete pour selectionner  l'utilisateur qui a pour email et mot de passe les identifiants qui ont été entrées
-        $req = mysqli_query($con , "SELECT * FROM `login` WHERE email = '$email' AND password ='$password' ") ;
+        $req = mysqli_query($con , "SELECT * FROM `signup` WHERE email = '$email' AND pass ='$password' ") ;
         $num_ligne = mysqli_num_rows($req) ;//Compter le nombre de ligne ayant rapport a la requette SQL
         if($num_ligne > 0){
             header("Location:get-involved.html") ;//Si le nombre de ligne est > 0 , on sera redirigé vers la page bienvenu

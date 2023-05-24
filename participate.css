@@ -153,7 +153,19 @@ header{
 }
 
 
+#msg{
+  font-size: 20px;
+  color: rgb(84, 161, 84);
+  animation: buttons .3s linear;
+  font-weight: 100;
+}
 
+#erreur{
+  font-size: 20px;
+  color: red;
+  animation: buttons .3s linear;
+  
+}
 
 
 

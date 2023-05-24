@@ -1,3 +1,42 @@
+<?php
+session_start();
+
+if (isset($_POST['boutton-valider'])) {
+    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['address']) && isset($_POST['governorate']) && isset($_POST['phonenumber']) && isset($_POST['now']) && isset($_POST['remark'])) {
+        $nom_serveur = "localhost";
+        $utilisateur = "root";
+        $mot_de_passe = "";
+        $nom_base_donnees = "utilisateur";
+        
+        $con = mysqli_connect($nom_serveur, $utilisateur, $mot_de_passe, $nom_base_donnees);
+        if ($con->connect_error) {
+            die("Connection non établie : " . $con->connect_error);
+        }
+
+        $e = $_POST['name'];
+        $n = $_POST['email'];
+        $p = $_POST['address'];
+        $m = $_POST['governorate'];
+        $v = $_POST['phonenumber'];
+        $k = $_POST['now'];
+        $l = $_POST['remark'];
+
+        $requet = "INSERT INTO materials(name, email, address, city, phonenumber, donate, remark) VALUES ('$e', '$n', '$p', '$m', '$v', '$k', '$l')";
+
+        if (empty($e) || empty($n) || empty($p) || empty($m) || empty($v) || empty($k) || empty($l)) {
+            $erreur = "All fields are required!";
+        } else if ($con->query($requet) === true) {
+            $msg = "Your Message Successfully Sent!";
+        }
+        
+        mysqli_close($con);
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 
 <head>
@@ -47,29 +86,34 @@
   <section>
     <div class="donate-class">
 
-        <form action="pdf.html">
+        <form action="" method="Post">
 
             <div class="row">
 
                 <div class="col">
 
                     <h3 class="title">DONATE</h3>
+                    <?php 
+       if(isset($erreur)){// si la variable $erreur existe , on affiche le contenu ;
+           echo "<p id= erreur >".$erreur."</p>"  ;
+       }
+       ?>
 
                     <div class="inputBox">
                         <span>Full name :</span>
-                        <input type="text" placeholder="Your Name">
+                        <input type="text" placeholder="Your Name" name="name" requiered="required">
                     </div>
                     <div class="inputBox">
                         <span>Email :</span>
-                        <input type="email" placeholder="Email Address">
+                        <input type="email" placeholder="Email Address" name="email" requiered="required">
                     </div>
                     <div class="inputBox">
                         <span>Address :</span>
-                        <input type="text" placeholder="room - street - locality">
+                        <input type="text" placeholder="room - street - locality" name="address" requiered="required">
                     </div>
                     <div class="inputBox">
                         <span>City :</span>
-                        <input list="gov" id="govern"  required="required" placeholder="Choose Your City" id="name"name="governorate">
+                        <input list="gov" id="govern"  required="required" placeholder="Choose Your City" id="name" name="governorate" requiered>
                 <datalist id="gov">
                 <option value="Ariana">Ariana</option>
                 <option value="Béja">Béja</option>
@@ -102,7 +146,7 @@
                     <div class="flex">
                         <div class="inputBox">
                             <span>Phone Number :</span>
-                            <input type="text" placeholder="State">
+                            <input type="text" placeholder="State" name="phonenumber" requiered="required">
                         </div>
                         
                     </div>
@@ -151,7 +195,7 @@
                     <span>Any Remarks :</span>
                     <div class="inputBox">
                         
-                        <textarea type="text" id="message" cols="40" rows="5" class="field"  ></textarea>
+                        <textarea type="text" id="message" cols="40" rows="5" class="field" name="remark" requiered="required" ></textarea>
                         
                     </div>
                 
@@ -161,7 +205,12 @@
 
             </div>
 
-            <input type="submit" value="Proceed To Checkout" class="submit-btn">
+            <input type="submit" value="Proceed To Checkout" class="submit-btn" name='boutton-valider'>
+            <?php 
+       if(isset($msg)){// si la variable $msg existe , on affiche le contenu ;
+           echo "<p id=msg align=center>".$msg."</p>"  ;
+       }
+       ?>
 
         </form>
 

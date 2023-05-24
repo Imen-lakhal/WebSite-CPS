@@ -455,3 +455,17 @@ footer{
     margin: 5px  0;
   }
 }
+
+
+#msg{
+  font-size: 20px;
+  color: green;
+  animation: buttons .3s linear;
+}
+
+#erreur{
+  font-size: 20px;
+  color: red;
+  animation: buttons .3s linear;
+  
+}

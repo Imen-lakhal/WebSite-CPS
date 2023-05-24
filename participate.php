@@ -1,3 +1,43 @@
+<?php
+session_start();
+if (isset($_POST['boutton-valider'])) {
+    if (isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['occupation']) && isset($_POST['age']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['governorate']) && isset($_POST['even']) && isset($_POST['time']) && isset($_POST['comments'])) {
+        $nom_serveur = "localhost";
+        $utilisateur = "root";
+        $mot_de_passe = "";
+        $nom_base_donnees = "utilisateur";
+        $con = mysqli_connect($nom_serveur, $utilisateur, $mot_de_passe, $nom_base_donnees);
+
+        $e = $_POST['fname'];
+        $n = $_POST['lname'];
+        $p = $_POST['occupation'];
+        $m = $_POST['age'];
+        $v = $_POST['email'];
+        $k = $_POST['phone'];
+        $l = $_POST['governorate'];
+        $s = $_POST['even'];
+        $t = $_POST['time'];
+        $u = $_POST['comments'];
+        $con = new mysqli($nom_serveur, $utilisateur, $mot_de_passe, $nom_base_donnees);
+        if ($con->connect_error) {
+            die("connection non etablie : " . $con->connect_error);
+        }
+        $requete = "INSERT INTO participate (fname, lname, occupation, age, email, phone, governorate, event, temps, comments) VALUES ('$e','$n','$p','$m','$v','$k','$l','$s','$t','$u')";
+
+        if (empty($e) || empty($n) || empty($p) || empty($m) || empty($k) || empty($l) || empty($s) || empty($t) || empty($u)) {
+            $erreur = "All fields are required!";
+        } else if ($con->query($requete) === true) {
+            $msg = "Your Message Successfully Sent!";
+        }
+        mysqli_close($con);
+    }
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +106,16 @@
 <div class="main">
     <div class="register">
         <h2>Register Here</h2>
-        <form id="register">
+        <?php 
+       if(isset($erreur)){// si la variable $erreur existe , on affiche le contenu ;
+           echo "<p id= erreur >".$erreur."</p>"  ;
+       }
+        
+       if(isset($msg)){// si la variable $msg existe , on affiche le contenu ;
+           echo "<p id=msg align=center>".$msg."</p>"  ;
+       }
+       ?>
+        <form id="register" action="" method="Post">
                 <label>First name :</label>
                 <br>
                 <input  type="text"  name="fname" id="name" placeholder="Enter Your First Name">
@@ -122,7 +171,7 @@
                 </datalist>
             <br><br>
             <div>
-                <label>Event :</label>
+                <label >Event :</label>
                 <div>
                     <input id="eve" type="radio" name="even" value="1">
                     <span for eve>DAFIHOM FE CHETEHOM</span>
@@ -158,9 +207,10 @@
                 <input  type="text" required="required" name="comments"id="name" placeholder="Enter Your Comments">
                 <br><br>
                 <br>
-            <button type="submit">Participate</button>
-            <p>Attached is the map showing the location of the CPS club.
-                Please contact us for more details.</p>
+            <button type="submit" name="boutton-valider">Participate</button><br>
+            
+            <br><p>Attached is the map showing the location of the CPS club.
+                Please contact us for more details.</p><br>
             <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.1990604805114!2d10.0637659!3d36.81374960000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd2d96d4a9d6c9%3A0xbbe38a2694938acf!2s%C3%89cole%20Nationale%20des%20Sciences%20de%20l&#39;Informatique!5e0!3m2!1sfr!2stn!4v1682961274397!5m2!1sfr!2stn" width="540px" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
         </form> 
     </div>
