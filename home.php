@@ -346,11 +346,11 @@
    
            <div class="email">
              <div class="text">Email *</div>
-             <input type="email" name="emailF" required>
+             <input type="email" name="emailF">
            </div>
            <div class="msg">
              <div class="text">Message *</div>
-             <textarea rows="2" cols="25" name="messageF" required></textarea>
+             <textarea rows="2" cols="25" name="messageF" ></textarea>
            </div>
            <div class="btn">
              <button type="submit" name="submit">Send</button>
