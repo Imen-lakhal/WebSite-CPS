@@ -23,7 +23,7 @@
                      if ($prepareStmt) {
                       mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
                          mysqli_stmt_execute($stmt);
-                         
+                         $success = "your message was successfully sent!";
                      }else{
                          die("Something went wrong");
                      }
@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="about-us.css">
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="footer.css">
-  <link rel="stylesheet" href="rate.css">
+  
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -55,9 +55,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-
-
 
 
   
@@ -85,16 +82,14 @@
               <li><a href="gallery.php"><strong>Gallery</strong></a></li>
               <li><a href="team.php"><strong>Team</strong></a></li>
               <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
-              <li><a href="login.php"><strong> LOGIN</strong></a></li>
-
-              
+              <li><a href="log.php"><strong> Log in</strong></a></li>
            </ul>
         </div>
     </header>
 
     <div class="title">
         <h2>"Notre seul pouvoir véritable consiste à aider autrui."<br>Dalaï-Lama</h2><br>
-        <a href="login.html">Donate Now</a>
+        <a href="log.php">Donate Now</a>
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
@@ -128,8 +123,8 @@
           and finally visits to primary schools in rural areas. The club's visits to schools are well planned and based on several criteria, such as the living standards of the areas to be visited, weather conditions, and financial conditions.</p>
       </p>
       <div class="btn">
-        <a href="team.html"><button type="button">Our Team</button></a>
-        <a href="video.html"><button type="button">Watch video </button></a>
+        <a href="team.php"><button type="button">Our Team</button></a>
+        <a href="video.php"><button type="button">Watch video </button></a>
       </div>
       </div>
 
@@ -292,17 +287,7 @@
     <!--//features-4 -->
 
 
-  <!--    partner   -->
-  <!-- <section class="abouts">
-    <div class="main">
-      <img src="croissantR.png">
-      <div class="abouts-text">
-        <h1 class="titres">OUR PARTNER</h1>
-        <h4 style="color: #D21312;">Our sincere appreciation goes out to our valued partner for their continued support.He has contributed greatly to our mission.</h4>
-        <p>The Tunisian Red Crescent is an organization of public interest, created on October 7, 1956, and recognized by decree of May 6, 1957 as a voluntary organization of aid and aid auxiliary to the public authorities in the humanitarian field, in accordance with the 1949 Geneva Conventions and its Additional Protocols. The Tunisian Red Crescent became a member of the International Red Cross and Red Crescent Movement on 13 September 1957</p>
-      </div>
-    </div>
-</section> -->
+  
 
 
 <section class="about">
@@ -320,37 +305,6 @@
 </section>
 
 
-<!-----Rate
-<div class="wrapper" align="center">
-  <input type="radio" name="rate" id="star-1">
-  <input type="radio" name="rate" id="star-2">
-  <input type="radio" name="rate" id="star-3">
-  <input type="radio" name="rate" id="star-4">
-  <input type="radio" name="rate" id="star-5">
-  <div class="content">
-    <div class="outer">
-      <div class="emojis">
-        <li class="slideImg"><img src="emojis/emoji-1.png" alt=""></li>
-        <li><img src="emojis/emoji-2.png" alt=""></li>
-        <li><img src="emojis/emoji-3.png" alt=""></li>
-        <li><img src="emojis/emoji-4.png" alt=""></li>
-        <li><img src="emojis/emoji-5.png" alt=""></li>
-      </div>
-    </div>
-    <div class="stars">
-      <label for="star-1" class="star-1 fas fa-star"></label>
-      <label for="star-2" class="star-2 fas fa-star"></label>
-      <label for="star-3" class="star-3 fas fa-star"></label>
-      <label for="star-4" class="star-4 fas fa-star"></label>
-      <label for="star-5" class="star-5 fas fa-star"></label>
-    </div>
-  </div>
-  <div class="footer">
-    <span class="text"></span>
-    <span class="numb"></span>
-  </div>
-</div>--------->
-
 
   <!--------footer------------>
 <footer>
@@ -361,8 +315,8 @@
           <p>Stay connected
            Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
            <div class="social">
-             <a href ="#"><span class="fab fa-facebook-f"></span></a>
-             <a href ="#"><span class="fab fa-instagram"></span></a>
+           <a href ="https://www.facebook.com/CPSENSI" target="_blank"><span class="fab fa-facebook-f"></span></a>
+             <a href ="https://www.instagram.com/cps.ensi/" target="_blank"><span class="fab fa-instagram"></span></a>
            </div>
           
          </div>
@@ -388,15 +342,15 @@
      <div class="right box">
        <h2>Contact Us</h2>
        <div class="content-footer">
-         <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
+         <form action=""  method="post">
    
            <div class="email">
              <div class="text">Email *</div>
-             <input type="email" name="emailF" >
+             <input type="email" name="emailF" required>
            </div>
            <div class="msg">
              <div class="text">Message *</div>
-             <textarea rows="2" cols="25" name="messageF"></textarea>
+             <textarea rows="2" cols="25" name="messageF" required></textarea>
            </div>
            <div class="btn">
              <button type="submit" name="submit">Send</button>
@@ -407,6 +361,9 @@
           echo "<p id= error >".$err."</p>"  ;
        } 
     ?>
+    <?php if (!empty($success)): ?>
+  <p><?php echo $success; ?></p>
+<?php endif; ?>
          </form>
        </div>
      </div>

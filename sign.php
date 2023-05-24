@@ -5,6 +5,7 @@
                     $email = $_POST["email"];
                     $password= $_POST["password"];
                     $passwordconfirm= $_POST["passwordconfirm"];
+                    $sub = "";
                     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                     //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
                     $errors = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
@@ -48,7 +49,8 @@
                       print_r($firstname);
                       mysqli_stmt_bind_param($stmt, "ssss",  $firstname ,$lastname, $email, $passwordHash);
                          mysqli_stmt_execute($stmt);
-                         echo "<div class='alert alert-success'>You are registered successfully.</div>";
+          
+                         $sub = "You are registered successfully!";
                     
                      }else{
                          die("Something went wrong");
@@ -57,8 +59,40 @@
                    
                   }
                 ?>
-
-
+<!-- -------------php footer form-------- -->
+<?php
+                  if (isset($_POST["submit2"])){
+                    $emailF = $_POST["emailF"];
+                    $messageF= $_POST["messageF"];
+                    //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
+                    $success = "";
+                    $erreurs = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
+                   if(empty($emailF) OR empty($messageF)) {
+                     array_push($erreurs,"All fields are required");
+                    }
+                    if (!filter_var($emailF, FILTER_VALIDATE_EMAIL)) {
+                     array_push($erreurs, "Email is not valid");
+                    }
+                    require_once "database.php";
+                    if (count($erreurs)>0) {
+                     foreach ($erreurs as  $erreur) {
+                     }
+                    }else{
+                     $sql = "INSERT INTO footercontact ( emailF, messageF) VALUES (?, ? )";
+                     $stmt = mysqli_stmt_init($conn);
+                     //This code initializes a new mysqli_stmt object and assigns it to the $stmt variable. The mysqli_stmt_init() function is used to initialize a new statement object, which is then used to prepare and execute SQL statements with parameterized queries.
+                     $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
+                     if ($prepareStmt) {
+                      mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
+                         mysqli_stmt_execute($stmt);
+                         $success = "your message was successfully sent!";
+                     }else{
+                         die("Something went wrong");
+                     }
+                    }
+                   
+                  }
+                ?>
 
 
 
@@ -95,12 +129,13 @@
         
         <ul class="nav-barre">            
             
-          <li><a href="home.html"><strong>Home</strong></a></li>
+          <li><a href="home.php"><strong>Home</strong></a></li>
               
-          <li><a href="events.html"><strong>Events</strong></a></li>
-          <li><a href="pics.html"><strong>Gallery</strong></a></li>
-          <li><a href="team.html"><strong>Team</strong></a></li>
-          <li><a href="getintouch.html"><strong> Get In Touch</strong></a></li>
+          <li><a href="events.php"><strong>Events</strong></a></li>
+              <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+              <li><a href="team.php"><strong>Team</strong></a></li>
+              <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+              <li><a href="log.php"><strong> Log in</strong></a></li>
               
            </ul>
         </div>
@@ -144,8 +179,10 @@
           echo "<p id= error>".$err."</p>"  ;
        }
        ?>
-
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
+        <?php if (!empty($sub)): ?>
+  <p id="sub"><?php echo $sub; ?></p>
+<?php endif; ?>
+                <form action=""  method="post">
                     <div class="inputBx">
                         <span>First Name</span>
                         <input type="text"  name="firstname">
@@ -186,57 +223,64 @@
 
 
     <!--------footer------------>
-<footer>
-    <div class="main-content">
-      <div class="left box">
-          <h2>Stay Updated</h2>
-         <div class="content-footer">
-            <p>Stay connected
-             Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
-             <div class="social">
-               <a href ="#"><span class="fab fa-facebook-f"></span></a>
-               <a href ="#"><span class="fab fa-instagram"></span></a>
-             </div>
-            
+    <footer>
+  <div class="main-content">
+    <div class="left box">
+        <h2>Stay Updated</h2>
+       <div class="content-footer">
+          <p>Stay connected
+           Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
+           <div class="social">
+           <a href ="https://www.facebook.com/CPSENSI" target="_blank"><span class="fab fa-facebook-f"></span></a>
+             <a href ="https://www.instagram.com/cps.ensi/" target="_blank"><span class="fab fa-instagram"></span></a>
            </div>
-       </div>
-  
-       <div class="center box">
-         <h2>Address</h2>
-         <div class="content-footer">
-           <div class="place">
-             <span class="fas fa-map-marker-alt"></span>
-             <span class="text">Tunisie,la Manouba</span>
-           </div>
-           <div class="phone">
-             <span class="fas fa-phone-alt"></span>
-             <span class="text">+21622909766</span>
-           </div>
-           <div class="email">
-             <span class="fas fa-envelope"></span>
-             <span class="text">cps.ensi@gmail.com</span>
-           </div>
+          
+         </div>
+     </div>
+
+     <div class="center box">
+       <h2>Address</h2>
+       <div class="content-footer">
+         <div class="place">
+           <span class="fas fa-map-marker-alt"></span>
+           <span class="text">Tunisie,la Manouba</span>
+         </div>
+         <div class="phone">
+           <span class="fas fa-phone-alt"></span>
+           <span class="text">+21622909766</span>
+         </div>
+         <div class="email">
+           <span class="fas fa-envelope"></span>
+           <span class="text">cps.ensi@gmail.com</span>
          </div>
        </div>
-  
-  
-       <div class="right box">
-         <h2>Contact Us</h2>
-         <div class="content-footer">
-           <form action="#">
-             <div class="email">
-               <div class="text">Email *</div>
-               <input type="email" required>
-             </div>
-             <div class="msg">
-               <div class="text">Message *</div>
-               <textarea rows="2" cols="25" required></textarea>
-             </div>
-             <div class="btn">
-               <button typr="submit">Send</button>
-             </div>
-  
-           </form>
+     </div>
+     <div class="right box">
+       <h2>Contact Us</h2>
+       <div class="content-footer">
+         <form action=""  method="post">
+   
+           <div class="email">
+             <div class="text">Email *</div>
+             <input type="email" name="emailF" >
+           </div>
+           <div class="msg">
+             <div class="text">Message *</div>
+             <textarea rows="2" cols="25" name="messageF" ></textarea>
+           </div>
+           <div class="btn">
+             <button type="submit" name="submit2">Send</button>
+           </div>
+           <?php 
+       if(isset($erreur)){// si la variable $erreur existe , on affiche le contenu ;
+        foreach($erreurs as $erreur)  
+          echo "<p id= error >".$erreur."</p>"  ;
+       } 
+    ?>
+    <?php if (!empty($success)): ?>
+  <p><?php echo $success; ?></p>
+<?php endif; ?>
+         </form>
          </div>
        </div>
    </div>

@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <link rel="stylesheet" href="materials.css">
+  <link rel="stylesheet" href="donate.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,19 +31,20 @@
 
 <ul class="nav-barre">            
     
-  <li><a href="home.php"><strong>Home</strong></a></li>
+<li><a href="home.php"><strong>Home</strong></a></li>
               
-  <li><a href="events.php"><strong>Events</strong></a></li>
-  <li><a href="gallery.php"><strong>Gallery</strong></a></li>
-  <li><a href="team.php"><strong>Team</strong></a></li>
-  <li><a href="getintouch.php"><strong> Get In Touch</strong></a></li>
+              <li><a href="events.php"><strong>Events</strong></a></li>
+              <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+              <li><a href="team.php"><strong>Team</strong></a></li>
+              <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+              <li><a href="log.php"><strong> Log out</strong></a></li>
       
    </ul>
 </div>
      
   </header>
   <br><br><br><br><br><br><br><br><br>
-   <!------donate----->
+   <!--Home-->
   <section>
     <div class="donate-class">
 
@@ -69,42 +70,18 @@
                     </div>
                     <div class="inputBox">
                         <span>City :</span>
-                        <input list="gov" id="govern"  required="required" placeholder="Choose Your City" id="name"name="governorate">
-                <datalist id="gov">
-                <option value="Ariana">Ariana</option>
-                <option value="Béja">Béja</option>
-                <option value="Ben Arous">Ben Arous</option>
-                <option value="Bizerte">Bizerte</option>
-                <option value="Gabès">Gabès</option>
-                <option value="Gafsa">Gafsa</option>
-                <option value="Jendouba">Jendouba</option>
-                <option value="Kairouan">Kairouan</option>
-                <option value="Kasserine">Kasserine</option>
-                <option value="Kébili">Kébili</option>
-                <option value="Kef">Kef</option>
-                <option value="Mahdia">Mahdia</option>
-                <option value="Manouba">Manouba</option>
-                <option value="Médenine">Médenine</option>
-                <option value="Monastir">Monastir</option>
-                <option value="Nabeul">Nabeul</option>
-                <option value="Sfax">Sfax</option>
-                <option value="Sidi Bouzid">Sidi Bouzid</option>
-                <option value="Siliana">Siliana</option>
-                <option value="Sousse">Sousse</option>
-                <option value="Tataouine">Tataouine</option>
-                <option value="Tozeur">Tozeur</option>
-                <option value="Tunis">Tunis</option>
-                <option value="Zaghouan">Zaghouan</option>
-                </datalist>
-                    
+                        <input type="text" placeholder="City Name">
                     </div>
 
                     <div class="flex">
                         <div class="inputBox">
-                            <span>Phone Number :</span>
+                            <span>State :</span>
                             <input type="text" placeholder="State">
                         </div>
-                        
+                        <div class="inputBox">
+                            <span>Zip Code :</span>
+                            <input type="text" placeholder="123 456">
+                        </div>
                     </div>
 
                 </div>
@@ -112,50 +89,34 @@
                 <div class="col">
 
                     <div class="inputBox">
-                        <span>Materials :</span>
-                        <img src="donate/clothes.jpg" alt="">
-                        <img src="donate/food.jpg" alt="">
-                        <img src="donate/school.jpg" alt="">
-                        <img src="donate/shoes.jpg" alt="">
+                        <span>Cards Accepted :</span>
+                        <img src="card/master.png" alt="">
+                        <img src="card/poste.jpg" alt="">
+                        <img src="card/visa.jpg" alt="">
                     </div>
-                    
-                        <span>What to donate :<br><br></span>
-                        
-                        <div> 
-                            <input id="1" type="radio" name="now" value="1">
-                            <label for="1">Clothes </label>
-                        </div>
-                        <br>
-                        <div>
-                            <input id="2" type="radio" name="now" value="2">
-                            <label for="2">Food</label>
-                        </div>
-                        <br>
-                        <div>
-                            <input id="3" type="radio" name="now" value="3">
-                            <label for="3">Shoes </label>
-                        </div>
-                        <br>
-                        <div>
-                            <input id="4" type="radio" name="now" value="4">
-                            <label for="4">School Supplies</label>
-                        </div>
-                        <br>
-                        <div>
-                            <input id="5" type="radio" name="now" value="5">
-                            <label for="5">Other </label>
-                        </div>
-                    
-
-                        <br><br>
-                    <span>Any Remarks :</span>
                     <div class="inputBox">
-                        
-                        <textarea type="text" id="message" cols="40" rows="5" class="field"  ></textarea>
-                        
+                        <span>Name On Card :</span>
+                        <input type="text" placeholder="Your Name">
                     </div>
-                
+                    <div class="inputBox">
+                        <span>Credit Card Number :</span>
+                        <input type="number" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="inputBox">
+                        <span>Exp Month :</span>
+                        <input type="text" placeholder="month">
+                    </div>
 
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>Exp Year :</span>
+                            <input type="number" placeholder="year">
+                        </div>
+                        <div class="inputBox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="cvv">
+                        </div>
+                    </div>
 
                 </div>
 
@@ -176,8 +137,8 @@
           <p>Stay connected
            Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
            <div class="social">
-             <a href ="#"><span class="fab fa-facebook-f"></span></a>
-             <a href ="#"><span class="fab fa-instagram"></span></a>
+             <<a href ="https://www.facebook.com/CPSENSI"><span class="fab fa-facebook-f"></span></a>
+             <a href ="https://www.instagram.com/cps.ensi/"><span class="fab fa-instagram"></span></a>
            </div>
           
          </div>

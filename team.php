@@ -1,5 +1,5 @@
-<?php
-                  if (isset($_POST["submit"])){
+<?php    
+    if (isset($_POST["submit"])){
                     $emailF = $_POST["emailF"];
                     $messageF= $_POST["messageF"];
                     //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
@@ -23,7 +23,7 @@
                      if ($prepareStmt) {
                       mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
                          mysqli_stmt_execute($stmt);
-                         
+                         $success = "your message was successfully sent!";
                      }else{
                          die("Something went wrong");
                      }
@@ -70,10 +70,12 @@
 
           <li><a href="home.php"><strong>Home</strong></a></li>
               
-          <li><a href="events.php"><strong>Events</strong></a></li>
-          <li><a href="pics.php"><strong>Gallery</strong></a></li>
-          <li><a href="team.php"><strong>Team</strong></a></li>
-          <li><a href="getintouch.php"><strong> Get In Touch</strong></a></li>
+          
+            <li><a href="events.php"><strong>Events</strong></a></li>
+              <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+              <li><a href="team.php"><strong>Team</strong></a></li>
+              <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+              <li><a href="log.php"><strong> Log in</strong></a></li>
               
            </ul>
         </div>
@@ -177,8 +179,8 @@
           <p>Stay connected
            Keep up to date with all the CPS news and events by following us on social media . We regularly post about the newest updates, partnerships and upcoming events. You will learn what the CPS team is up to, and who is behind all those amazing work.</p>
            <div class="social">
-             <a href ="#"><span class="fab fa-facebook-f"></span></a>
-             <a href ="#"><span class="fab fa-instagram"></span></a>
+           <a href ="https://www.facebook.com/CPSENSI" target="_blank"><span class="fab fa-facebook-f"></span></a>
+             <a href ="https://www.instagram.com/cps.ensi/" target="_blank"><span class="fab fa-instagram"></span></a>
            </div>
           
          </div>
@@ -206,7 +208,7 @@
      <div class="right box">
        <h2>Contact Us</h2>
        <div class="content-footer">
-       <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
+       <form action=""  method="post">
    
    <div class="email">
      <div class="text">Email *</div>
@@ -219,12 +221,14 @@
    <div class="btn">
      <button type="submit" name="submit">Send</button>
    </div>
-   <?php 
-if(isset($errors)){// si la variable $erreur existe , on affiche le contenu ;
-foreach($errors as $err)  
-  echo "<p id= error >".$err."</p>"  ;
-} 
-?>
+   <?php if(isset($errors)){// si la variable $erreur existe , on affiche le contenu ;
+        foreach($errors as $err)  
+          echo "<p id= error >".$err."</p>"  ;
+       } 
+    ?>
+    <?php if (!empty($success)): ?>
+  <p><?php echo $success; ?></p>
+<?php endif; ?>
  </form>
        </div>
      </div>

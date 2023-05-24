@@ -33,10 +33,12 @@
     
   <li><a href="home.php"><strong>Home</strong></a></li>
               
-  <li><a href="events.php"><strong>Events</strong></a></li>
-  <li><a href="gallery.php"><strong>Gallery</strong></a></li>
-  <li><a href="team.php"><strong>Team</strong></a></li>
-  <li><a href="getintouch.php"><strong> Get In Touch</strong></a></li>
+  
+              <li><a href="events.php"><strong>Events</strong></a></li>
+              <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+              <li><a href="team.php"><strong>Team</strong></a></li>
+              <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+              <li><a href="log.php"><strong> Log in</strong></a></li>
       
    </ul>
 </div>
