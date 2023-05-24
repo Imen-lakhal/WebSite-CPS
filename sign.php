@@ -1,3 +1,66 @@
+<?php
+                  if (isset($_POST["submit"])){
+                    $firstname = $_POST["firstname"];
+                    $lastname = $_POST["lastname"];
+                    $email = $_POST["email"];
+                    $password= $_POST["password"];
+                    $passwordconfirm= $_POST["passwordconfirm"];
+                    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                    //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
+                    $errors = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
+                    
+                    if (empty($firstname) OR empty($lastname) OR empty($email) OR empty($password) OR empty($passwordconfirm)) {
+                     array_push($errors,"All fields are required");
+                    }
+                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                     array_push($errors, "Email is not valid");
+                    }
+                    if (strlen($password)<8) {
+                     array_push($errors,"Password must be at least 8 charactes long");
+                    }
+                    if ($password!==$passwordconfirm) {
+                     array_push($errors,"Password does not match");
+                    }
+                    require_once "database.php";
+                    $sql = "SELECT * FROM signup WHERE email = '$email'";
+                    $result = mysqli_query($conn, $sql);
+                    $rowCount = mysqli_num_rows($result);
+                    //This code executes an SQL query to check if the email provided by the user already exists in the database. It uses the mysqli_query() function to execute the query and passes the database connection $conn and the SQL query $sql as arguments.
+         
+         //The query selects all rows from the users table where the email column matches the email provided by the user. The code then uses the mysqli_num_rows() function to count the number of rows returned by the query. If the count is greater than 0, it means that the email already exists in the database, so the code adds an error message "Email already exists!" to the $errors array using the array_push() function. 
+         
+         // This is an important validation check to ensure that a user cannot create multiple accounts with the same email address.
+                    if ($rowCount>0) {
+                     array_push($errors,"Email already exists!");
+                    }
+                    if (count($errors)>0) {
+                     foreach ($errors as  $error) {
+                         echo "<div class='alert alert-danger'>$error</div>";
+                     }
+                    }else{
+                     
+                     $sql = "INSERT INTO signup (firstname, lastname, email, pass) VALUES (?, ?, ?, ? )";
+                     $stmt = mysqli_stmt_init($conn);
+                     //This code initializes a new mysqli_stmt object and assigns it to the $stmt variable. The mysqli_stmt_init() function is used to initialize a new statement object, which is then used to prepare and execute SQL statements with parameterized queries.
+                     $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
+                     if ($prepareStmt) {
+                      print_r($firstname);
+                      mysqli_stmt_bind_param($stmt, "ssss",  $firstname ,$lastname, $email, $passwordHash);
+                         mysqli_stmt_execute($stmt);
+                         echo "<div class='alert alert-success'>You are registered successfully.</div>";
+                     }else{
+                         die("Something went wrong");
+                     }
+                    }
+                   
+                  }
+                ?>
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,38 +134,47 @@
             <div class="formBox">
                 <h2>Sign Up</h2><br>
                 <h5>It’s quick and easy.</h5>
-                <form action="#">
+       
+     
+      <?php 
+       if(isset($errors)){// si la variable $erreur existe , on affiche le contenu ;
+        foreach($errors as $err)  
+          echo "<p id= error>".$err."</p>"  ;
+       }
+       ?>
+
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="post">
                     <div class="inputBx">
                         <span>First Name</span>
-                        <input type="text">
+                        <input type="text" class="form-control" name="firstname">
 
                     </div>
                     <div class="inputBx">
                         <span>Last Name</span>
-                        <input type="text">
+                        <input type="text" class="form-control" name="lastname" required>
 
                     </div>
                     <div class="inputBx">
                         <span>Email</span>
-                        <input type="text">
+                        <input type="email" class="form-control" name="email" required>
 
                     </div>
                     <div class="inputBx">
                         <span>Password</span>
-                        <input type="password">
+                        <input type="password" class="form-control" name="password"  required>
 
                     </div>
                     <div class="inputBx">
                         <span>Confirm Password</span>
-                        <input type="password">
+                        <input type="password" class="form-control" name="passwordconfirm" required>
 
                     </div>
                     
                     <div class="inputBx">
-                        <input type="submit" value="Submit" class="submit">
+                        <input type="submit" value="Submit" name="submit" class="submit">
                     </div>
                     <div class="inputBx">
-                        <p>Already have an account ?  <a href="#" >Login Here</a></p>
+                        <p>Already have an account ?  <a href="log.php" >Login Here</a></p>
                     </div>
                 </form>
             </div>

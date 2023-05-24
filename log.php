@@ -130,7 +130,7 @@
                         <input type="submit" value="Log In" class="submit" name="boutton-valider">
                     </div>
                     <div class="inputBx">
-                        <p>Don't have an account ?  <a href="#" >Sign</a></p>
+                        <p>Don't have an account ?  <a href="sign.php" >Sign</a></p>
                     </div>
 
                 </form>
