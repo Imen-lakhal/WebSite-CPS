@@ -26,16 +26,16 @@
             </label>
             
         
-        <ul class="nav-barre">            
+            <ul class="nav-barre">            
             
-          <li><a href="home.html"><strong>Home</strong></a></li>
-              
-          <li><a href="events.html"><strong>Events</strong></a></li>
-          <li><a href="pics.html"><strong>Gallery</strong></a></li>
-          <li><a href="team.html"><strong>Team</strong></a></li>
-          <li><a href="getintouch.html"><strong> Get In Touch</strong></a></li>
-              
-           </ul>
+            <li><a href="home.php"><strong>Home</strong></a></li>
+            
+            <li><a href="events.php"><strong>Events</strong></a></li>
+            <li><a href="gallery.php"><strong>Gallery</strong></a></li>
+            <li><a href="team.php"><strong>Team</strong></a></li>
+            <li><a href="getintouch.php"><strong>Get In Touch</strong></a></li>
+            <li><a href="log.php"><strong> Log in</strong></a></li>
+         </ul>
         </div>
     </header>
     

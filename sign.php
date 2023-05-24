@@ -6,7 +6,7 @@
                     $password= $_POST["password"];
                     $passwordconfirm= $_POST["passwordconfirm"];
                     $sub = "";
-                    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                    // $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                     //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
                     $errors = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
                     
@@ -41,16 +41,18 @@
                      }
                     }else{
                      
-                     $sql = "INSERT INTO signup (firstname, lastname, email, pass) VALUES (?, ?, ?, ? )";
+                    $sql = "INSERT INTO signup (firstname, lastname, email, pass) VALUES (?, ?, ?, ? )" ;
+                     
                      $stmt = mysqli_stmt_init($conn);
                      //This code initializes a new mysqli_stmt object and assigns it to the $stmt variable. The mysqli_stmt_init() function is used to initialize a new statement object, which is then used to prepare and execute SQL statements with parameterized queries.
                      $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
                      if ($prepareStmt) {
                       print_r($firstname);
-                      mysqli_stmt_bind_param($stmt, "ssss",  $firstname ,$lastname, $email, $passwordHash);
+                      mysqli_stmt_bind_param($stmt, "ssss",  $firstname ,$lastname, $email,$password);
                          mysqli_stmt_execute($stmt);
           
                          $sub = "You are registered successfully!";
+                         header("Location:log.php") ;
                     
                      }else{
                          die("Something went wrong");

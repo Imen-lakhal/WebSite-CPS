@@ -132,10 +132,6 @@
   </section>
       <br><br>
 
-
-
-   
-
    <!-- ......Services....... -->   
    
    <div class="services">
@@ -177,6 +173,7 @@
     </div>
   
   </div>
+  <br><br><br> <br><br><br>
   
     <!-- /features-4 -->
     <section class="features-4">
@@ -190,94 +187,94 @@
           <div class="row features4-grids text-left mt-lg-4">
             <div class="col-lg-3 col-md-6 features4-grid mt-4">
               <div class="features4-grid-inn">
-                <div class="img-featured">
-                  <div class="ch-item ch-img-1">
+                      <div class="img-featured">
+           <div class="ch-item ch-img-1">
                     <div class="ch-info-wrap">
                       <div class="ch-info">
-                        <div class="ch-info-front ch-img-1"></div>
+           <div class="ch-info-front ch-img-1"></div>
                         <div class="ch-info-back">
                           <h4>Donate</h4>
                         </div>
                       </div>
-                    </div>
+        </div>
                   </div>
-                </div>
+       </div>
   
                 <div class="features4-rightinfo">
-                  <h5><a href="#URL">Donate financially</a></h5>
+         <h5><a href="#URL">Donate financially</a></h5>
                   <p>Donating financially is a powerful way to make a meaningful impact on the lives of those in need.</p>
   
-                </div>
+        </div>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 features4-grid mt-4">
               <div class="features4-grid-inn">
                 <div class="img-featured">
-                  <div class="ch-item ch-img-2">
+          <div class="ch-item ch-img-2">
                     <div class="ch-info-wrap">
-                      <div class="ch-info">
+           <div class="ch-info">
                         <div class="ch-info-front ch-img-2"></div>
-                        <div class="ch-info-back">
+             <div class="ch-info-back">
                           <h4>Participate</h4>
-                        </div>
+           </div>
                       </div>
-                    </div>
+             </div>
                   </div>
                 </div>
-                <div class="features4-rightinfo">
+       <div class="features4-rightinfo">
                   <h5><a href="#URL">
                       Become A Volunteer</a></h5>
-                  <p>Volunteering can be a truly rewarding experience, both for the individual and for the community . </p>
+        <p>Volunteering can be a truly rewarding experience, both for the individual and for the community . </p>
                            
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 features4-grid mt-4">
               <div class="features4-grid-inn">
-                <div class="img-featured">
+      <div class="img-featured">
                   <div class="ch-item ch-img-3">
                     <div class="ch-info-wrap">
-                      <div class="ch-info">
+          <div class="ch-info">
                         <div class="ch-info-front ch-img-3"></div>
-                        <div class="ch-info-back">
-                          <h4>Donate</h4>
+           <div class="ch-info-back">
+                <h4>Donate</h4>
                         </div>
                       </div>
                     </div>
-                  </div>
+            </div>
                 </div>
-                <div class="features4-rightinfo">
+          <div class="features4-rightinfo">
                   <h5><a href="#URL">
                       Donate Materials</a></h5>
                   <p>Your contribution, no matter how big or small, will be greatly appreciated and put to good use. 
                     
                   </p>
   
-                </div>
+          </div>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 features4-grid mt-4">
               <div class="features4-grid-inn">
-                <div class="img-featured">
+        <div class="img-featured">
                   <div class="ch-item ch-img-4">
-                    <div class="ch-info-wrap">
+          <div class="ch-info-wrap">
                       <div class="ch-info">
-                        <div class="ch-info-front ch-img-4"></div>
-                        <div class="ch-info-back">
+             <div class="ch-info-front ch-img-4"></div>
+              <div class="ch-info-back">
                           <h4>Contact</h4>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                </div>
+           </div>
+             </div>
+                  </div>
+        </div>
                 <div class="features4-rightinfo">
-                  <h5><a href="#URL">
+          <h5><a href="#URL">
                       Contact Us</a></h5>
-                  <p>If you have any questions or would like to learn more about us, Do not hesitate to contact us.</p>
+          <p>If you have any questions or would like to learn more about us, Do not hesitate to contact us.</p>
   
                 </div>
-              </div>
-            </div>
+       </div>
+       </div>
           </div>
         </div>
       </div>
@@ -286,15 +283,11 @@
   
     <!--//features-4 -->
 
-
-  
-
-
 <section class="about">
   <div class="main">
     <div class="all-text">
       <h4>OUR PARTNER</h4>
-      <h3 style="color: black;">The Tunisian Red Crescent</h3>
+      <h1 style="color: black;">The Tunisian Red Crescent</h1>
       <p>Our sincere appreciation goes out to our valued partner for their continued support.
         He has contributed greatly to our mission
         The Tunisian Red Crescent is an organization of public interest, created on October 7, 1956, and recognized by decree of May 6, 1957 as a voluntary organization of aid and aid auxiliary to the public authorities in the humanitarian field, in accordance with the 1949 Geneva Conventions and its Additional Protocols. 
@@ -303,9 +296,6 @@
     <img  class="im2" src="croissantR.png" >
   </div>
 </section>
-
-
-
   <!--------footer------------>
 <footer>
   <div class="main-content">

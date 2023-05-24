@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php 
 session_start() ;
 if(isset($_POST['boutton-valider'])){ 
@@ -38,7 +37,6 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) &
 
 
 
-=======
 <!-- ----------php footer form------- -->
 <?php
                   if (isset($_POST["submit"])){
@@ -73,7 +71,6 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) &
                    
                   }
                 ?>
->>>>>>> 583c9b8931aa31e5d1441158b5a3c052a7dffea9
 
 <!DOCTYPE html>
 <html lang="en">
@@ -262,22 +259,7 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) &
      <div class="right box">
        <h2>Contact Us</h2>
        <div class="content-footer">
-<<<<<<< HEAD
-         <form action="#">
-           <div class="email">
-             <div class="text">Email *</div>
-             <input type="email" required>
-           </div>
-           <div class="msg">
-             <div class="text">Message *</div>
-             <textarea rows="2" cols="25" required></textarea>
-           </div>
-           <div class="btn">
-             <button type="submit" >Send</button>
-           </div>
-
-         </form>
-=======
+         
        <form action=""  method="post">
    
    <div class="email">
@@ -301,7 +283,6 @@ foreach($errors as $err)
 <p><?php echo $success; ?></p>
 <?php endif; ?>
  </form>
->>>>>>> 583c9b8931aa31e5d1441158b5a3c052a7dffea9
        </div>
      </div>
  </div>

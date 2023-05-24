@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 
@@ -38,7 +37,6 @@ if (isset($_POST['boutton-valider'])) {
 
 
 
-=======
 <!-- -----------php footer form---- -->
 <?php
                   if (isset($_POST["submit"])){
@@ -73,7 +71,6 @@ if (isset($_POST['boutton-valider'])) {
                    
                   }
                 ?>
->>>>>>> 2b14964d2700af42fa6eb988f2aeddc32dcd8ca8
 <!DOCTYPE html>
 
 <head>

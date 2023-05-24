@@ -3,10 +3,10 @@
    session_start() ;
   if(isset($_POST['boutton-valider'])){ // Si on clique sur le boutton , alors :
     //Nous allons verifiér les informations du formulaire
-    if(isset($_POST['email']) && isset($_POST['mdp'])) { //On verifie ici si l'utilisateur a rentré des informations
+    if(isset($_POST['email']) && isset($_POST['pass'])) { //On verifie ici si l'utilisateur a rentré des informations
       //Nous allons mettres l'email et le mot de passe dans des variables
       $email = $_POST['email'] ;
-      $password = $_POST['mdp'] ;
+      $pass = $_POST['pass'] ;
       $erreur = "" ;
        //Nous allons verifier si les informations entrée sont correctes
        //Connexion a la base de données
@@ -16,16 +16,23 @@
        $nom_base_données ="utilisateur" ;
        $con = mysqli_connect($nom_serveur , $utilisateur ,$mot_de_passe , $nom_base_données);
        //requete pour selectionner  l'utilisateur qui a pour email et mot de passe les identifiants qui ont été entrées
-        $req = mysqli_query($con , "SELECT * FROM `signup` WHERE email = '$email' AND pass ='$password' ") ;
-        $num_ligne = mysqli_num_rows($req) ;//Compter le nombre de ligne ayant rapport a la requette SQL
-        if($num_ligne > 0){
-            header("Location:get-involved.html") ;//Si le nombre de ligne est > 0 , on sera redirigé vers la page bienvenu
-            // Nous allons créer une variable de type session qui vas contenir l'email de l'utilisateur
-            $_SESSION['email'] = $email ;
-        }else {//si non
+        $query =  "SELECT * FROM `signup` WHERE email = '$email' AND pass ='$pass ' limit 1 " ;
+        $result = mysqli_query($con,$query);
+        if ($result){
+          if ($result && mysqli_num_rows($result)>0 ){
+            $user_data = mysqli_fetch_assoc($result);
+            if ($user_data['pass']==$pass){
+              header("Location:get-involved.php") ;
+              die;
+            }
+          }
+          else {//si non
             $erreur = "Adresse Mail ou Mots de passe incorrectes !";
         }
     }
+        }
+  
+        
   }
 ?>
 
@@ -99,7 +106,7 @@
         
         <ul class="nav-barre">            
             
-          <li><a href="home.html"><strong>Home</strong></a></li>
+          <li><a href="home.php"><strong>Home</strong></a></li>
               
           <li><a href="events.php"><strong>Events</strong></a></li>
               <li><a href="gallery.php"><strong>Gallery</strong></a></li>
@@ -153,7 +160,7 @@
                     </div>
                     <div class="inputBx">
                         <span>Password</span>
-                        <input type="password" name="mdp">
+                        <input type="password" name="pass">
 
                     </div>
                     <div class="remember">

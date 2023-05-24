@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 if (isset($_POST['boutton-valider'])) {
@@ -35,7 +34,6 @@ if (isset($_POST['boutton-valider'])) {
 }
 ?>
 
-=======
              
               
               
@@ -73,7 +71,6 @@ if (isset($_POST['boutton-valider'])) {
                    
                   }
                 ?>
->>>>>>> 583c9b8931aa31e5d1441158b5a3c052a7dffea9
 
 
 
