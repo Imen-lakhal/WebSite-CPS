@@ -88,7 +88,8 @@
     </header>
 
     <div class="title">
-        <h2>"Notre seul pouvoir véritable consiste à aider autrui."<br>Dalaï-Lama</h2><br>
+    <h2 class="title2">“We only have what we give.”
+          ― Isabel Allende</h2><br><br>
         <a href="log.php">Donate Now</a>
     </div>
     <script>

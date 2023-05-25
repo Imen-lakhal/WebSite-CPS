@@ -23,10 +23,22 @@ body{
 }
 .title h2{
   color: #fff;
-  font-size: 30px;
+  font-size: 50px;
   font-family: 'Lucida Sans Regular';
   font-style: oblique;
   font-weight: lighter;
+   /* -webkit-text-stroke: 1px #e10c0c;*/
+   color: transparent;
+   background-image: linear-gradient(#fff,#fff);
+ background-repeat:no-repeat;
+ -webkit-background-clip: text;
+ background-position: -750px 0;
+ animation:backcolor 5s linear infinite alternate;
+}
+@keyframes backcolor {
+  100%{
+    background-position: 0 0;
+  }
 }
 .title a{
   background: crimson;
