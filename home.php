@@ -203,7 +203,7 @@
        </div>
   
                 <div class="features4-rightinfo">
-         <h5><a href="donate-financially.php">Donate financially</a></h5>
+         <h5><a href="#URL">Donate financially</a></h5>
                   <p>Donating financially is a powerful way to make a meaningful impact on the lives of those in need.</p>
   
         </div>
@@ -224,7 +224,7 @@
                   </div>
                 </div>
        <div class="features4-rightinfo">
-                  <h5><a href="participate.php">
+                  <h5><a href="#URL">
                       Become A Volunteer</a></h5>
         <p>Volunteering can be a truly rewarding experience, both for the individual and for the community . </p>
                            
@@ -246,7 +246,7 @@
             </div>
                 </div>
           <div class="features4-rightinfo">
-                  <h5><a href="donate-materials.php">
+                  <h5><a href="#URL">
                       Donate Materials</a></h5>
                   <p>Your contribution, no matter how big or small, will be greatly appreciated and put to good use. 
                     
@@ -270,7 +270,7 @@
                   </div>
         </div>
                 <div class="features4-rightinfo">
-          <h5><a href="getintouch.php">
+          <h5><a href="#URL">
                       Contact Us</a></h5>
           <p>If you have any questions or would like to learn more about us, Do not hesitate to contact us.</p>
   
@@ -287,7 +287,7 @@
     <!--//features-4 -->
 
 <section class="about">
-  <div class="main">
+  <div class="main" >
     <div class="all-text">
       <h4>OUR PARTNER</h4>
       <h1 style="color: black;">The Tunisian Red Crescent</h1>
