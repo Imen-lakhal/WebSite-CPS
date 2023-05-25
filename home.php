@@ -37,12 +37,12 @@
 <head>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
+    
   <link rel="stylesheet" href="service.css">
   <link rel="stylesheet" href="about-us.css">
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="footer.css">
-  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -134,7 +134,7 @@
       <br><br>
 
    <!-- ......Services....... -->   
-   
+
    <div class="services">
     <h1>Our Services</h1>
     <div class="cen">
@@ -174,6 +174,7 @@
     </div>
   
   </div>
+   </div>
   <br><br><br> <br><br><br>
   
     <!-- /features-4 -->
@@ -202,7 +203,7 @@
        </div>
   
                 <div class="features4-rightinfo">
-         <h5><a href="#URL">Donate financially</a></h5>
+         <h5><a href="donate-financially.php">Donate financially</a></h5>
                   <p>Donating financially is a powerful way to make a meaningful impact on the lives of those in need.</p>
   
         </div>
@@ -223,7 +224,7 @@
                   </div>
                 </div>
        <div class="features4-rightinfo">
-                  <h5><a href="#URL">
+                  <h5><a href="participate.php">
                       Become A Volunteer</a></h5>
         <p>Volunteering can be a truly rewarding experience, both for the individual and for the community . </p>
                            
@@ -245,7 +246,7 @@
             </div>
                 </div>
           <div class="features4-rightinfo">
-                  <h5><a href="#URL">
+                  <h5><a href="donate-materials.php">
                       Donate Materials</a></h5>
                   <p>Your contribution, no matter how big or small, will be greatly appreciated and put to good use. 
                     
@@ -269,7 +270,7 @@
                   </div>
         </div>
                 <div class="features4-rightinfo">
-          <h5><a href="#URL">
+          <h5><a href="getintouch.php">
                       Contact Us</a></h5>
           <p>If you have any questions or would like to learn more about us, Do not hesitate to contact us.</p>
   
@@ -281,6 +282,7 @@
       </div>
       </div>
     </section>
+</div>
   
     <!--//features-4 -->
 
@@ -297,6 +299,7 @@
     <img  class="im2" src="croissantR.png" >
   </div>
 </section>
+    </div>
   <!--------footer------------>
 <footer>
   <div class="main-content">

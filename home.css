@@ -11,7 +11,9 @@ body{
 #nav , .navig{
   display: none;
 }
-
+html{
+  scroll-behavior:smooth;
+}
 .title{
   background: linear-gradient(rgb(73, 72, 72),rgba(23, 22, 22, 0.5)) , url(home2.jpg) no-repeat fixed bottom / cover;
   min-height: 100vh;
