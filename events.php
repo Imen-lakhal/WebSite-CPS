@@ -46,8 +46,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/514c1af453.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/events.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="events.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="icon" href="cps.png"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     

@@ -4,8 +4,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CPS ENSI</title>
-        <link rel="stylesheet" href="css/home.css">
-        <link rel="stylesheet" href="css/video.css">
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="video.css">
         <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
       
         <link rel="icon" href="cps.png"/>
