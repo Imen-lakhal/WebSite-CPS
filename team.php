@@ -42,9 +42,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>CPS ENSI</title>
-      <link rel="stylesheet" href="home.css">
-      <link rel="stylesheet" href="styleteam.css">
-      <link rel="stylesheet" href="footer.css">
+      <link rel="stylesheet" href="css/home.css">
+      <link rel="stylesheet" href="css/styleteam.css">
+      <link rel="stylesheet" href="css/footer.css">
       <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     
       <link rel="icon" href="cps.png"/>
@@ -107,7 +107,7 @@
       <div  class="ligne">
         <div class="milieu">
           <div class="carte">
-            <img src="dhouha.png" style="width:100%">
+            <img src="images/team/dhouha.png" style="width:100%">
             <div class="container">
               <h2>Dhouha Haj Taieb</h2>
               <p>Présidente</p>
@@ -120,7 +120,7 @@
         <div  class="ligne">
         <div class="colone">
           <div  class="carte">
-            <img src="hiba.png" style="width:100%">
+            <img src="images/team/hiba.png" style="width:100%">
             <div class="container">
               <h2>Hiba Nahdi</h2>
               <p>Secrétaire générale et directrice des ressources humaines</p>
@@ -130,7 +130,7 @@
       
         <div class="colone">
           <div  class="carte">
-            <img src="abyr.png" style="width:100%">
+            <img src="images/team/abyr.png" style="width:100%">
             <div class="container">
               <h2>Abyr Ghazel</h2>
               <p>Trésorière</p>
@@ -143,7 +143,7 @@
       <div  class="ligne">
         <div class="colone">
           <div  class="carte">
-            <img src="anis.png" style="width:100%">
+            <img src="images/team/anis.png" style="width:100%">
             <div class="container">
               <h2>Med Anis Oueslati</h2>
               <p>Responsable Logistique</p>
@@ -154,7 +154,7 @@
       
         <div class="colone">
           <div  class="carte">
-            <img src="mouadh.png" style="width:100%">
+            <img src="images/team/mouadh.png" style="width:100%">
             <div class="container">
               <h2>Mouadh Fraj</h2>
               <p>Responsable Media</p>

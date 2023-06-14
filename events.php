@@ -46,8 +46,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/514c1af453.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="events.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="icon" href="cps.png"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     
@@ -195,16 +195,19 @@
   
   <script>
     var swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
+      effect: "coverflow", // (effet de couverture en cascade)
+      // les diapositives seront superposées les unes sur les autres
+      grabCursor: true, //permet de changer le curseur de la souris en une main qui semble saisir les diapositives,
       centeredSlides: true,
-      slidesPerView: "auto",
+      slidesPerView: "auto", 
+      // le nombre de diapositives visibles à la fois sera déterminé automatiquement en fonction de l'espace disponible dans le conteneur.
       coverflowEffect: {
         rotate: 0,
         stretch: 0,
         depth: 300,
-        modifier: 1,
-        slideShadows: false,
+        modifier: 1, 
+        //permet d'ajuster l'intensité de l'effet de couverture en cascade.
+        slideShadows: false, //les ombres des diapositives 
       },
       pagination: {
         el: ".swiper-pagination",

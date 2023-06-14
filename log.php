@@ -81,9 +81,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CPS ENSI</title>
     <link rel="icon" href="cps.png"/>
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
 
 
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
@@ -134,13 +134,6 @@
     
     <br><br>
     
-
-
-
-
-
-
-
 
     <section>
         <div class="imgBox"></div>

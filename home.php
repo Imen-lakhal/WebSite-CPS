@@ -23,7 +23,7 @@
                      if ($prepareStmt) {
                       mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
                          mysqli_stmt_execute($stmt);
-                         $success = "your message was successfully sent!";
+                         $success = "Your message was successfully sent!";
                      }else{
                          die("Something went wrong");
                      }
@@ -38,10 +38,10 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
-  <link rel="stylesheet" href="service.css">
-  <link rel="stylesheet" href="about-us.css">
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="css/service.css">
+  <link rel="stylesheet" href="css/about-us.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/footer.css">
   
 
   
@@ -88,14 +88,13 @@
     </header>
 
     <div class="title">
-    <h2 class="title2">“We only have what we give.”
-          ― Isabel Allende</h2><br><br>
+        <h2>"Notre seul pouvoir véritable consiste à aider autrui."<br>Dalaï-Lama</h2><br>
         <a href="log.php">Donate Now</a>
     </div>
-    <script>
+     <script>
       document.addEventListener("DOMContentLoaded", function() {
         window.addEventListener('scroll', function() {
-          var gap = 50;
+          var gap = 50; //Cette valeur représente la distance en pixels depuis le haut de la fenêtre à partir de laquelle nous souhaitons ajouter la classe CSS
           if (window.scrollY > gap) {
             document.querySelector('header').classList.add('active');
           } else {
@@ -103,7 +102,7 @@
           }
         });
       });
-    </script>
+    </script> 
 
     <br><br>
 

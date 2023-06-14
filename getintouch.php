@@ -83,11 +83,11 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) &
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="getintouch.css">
+    <link rel="stylesheet" href="css/getintouch.css">
     <title>CPS ENSI</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="icon" href="cps.png"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -201,24 +201,6 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) &
         </div>          
     </div>
 
-
-
-
-  
-    <!-- scripts  -->
-    <script>
-        // drop down menu script
-        var menu = document.getElementById("menu");
-        menu.style.maxHeight = "0px";
-        function togglemenu() {
-            if (menu.style.maxHeight == "0px") {
-                menu.style.maxHeight = "390px";
-            }
-            else {
-                menu.style.maxHeight = "0px";
-            }
-        }
-    </script>
 
 
 <!--------footer------------>
