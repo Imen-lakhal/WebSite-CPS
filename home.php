@@ -1,31 +1,32 @@
-<?php
+<?php             //checks if the form was submitted. This line is checking if there is a POST parameter named "submit" set, indicating that the form was submitted.
                   if (isset($_POST["submit"])){
+                    //retrieve the values of "emailF" and "messageF" from the submitted form data and store them in variables.
                     $emailF = $_POST["emailF"];
                     $messageF= $_POST["messageF"];
-                    //After this, the code initializes an empty $errors array to store any validation errors that may occur during the form submission process.
-                    $success = "";
+                   
+                    $success = ""; //initializes an empty string variable to store a success message
                     $errors = array();//This code initializes an empty array $errors to store any validation errors that may occur during the form submission process.
-                   if(empty($emailF) OR empty($messageF)) {
+                   if(empty($emailF) OR empty($messageF)) {//checks if either the email or message field is empty
                      array_push($errors,"All fields are required");
                     }
-                    if (!filter_var($emailF, FILTER_VALIDATE_EMAIL)) {
+                    if (!filter_var($emailF, FILTER_VALIDATE_EMAIL)) {//checks if the email is not valid using the FILTER_VALIDATE_EMAIL filter.
                      array_push($errors, "Email is not valid");
                     }
-                    require_once "database.php";
-                    if (count($errors)>0) {
+                    require_once "database.php";//includes the "database.php" file, which presumably contains the necessary database connection code.
+                    if (count($errors)>0) {//checks if there are any validation errors
                      foreach ($errors as  $error) {
                      }
-                    }else{
-                     $sql = "INSERT INTO footercontact ( emailF, messageF) VALUES (?, ? )";
-                     $stmt = mysqli_stmt_init($conn);
-                     //This code initializes a new mysqli_stmt object and assigns it to the $stmt variable. The mysqli_stmt_init() function is used to initialize a new statement object, which is then used to prepare and execute SQL statements with parameterized queries.
+                    }else{//If there are no validation errors, the code proceeds to insert the form data into the database using a prepared statement.
+                     $sql = "INSERT INTO footercontact ( emailF, messageF) VALUES (?, ? )";//defines an SQL query with placeholders for the email and message fields.
+                     $stmt = mysqli_stmt_init($conn);//initializes a new mysqli_stmt object using the database connection $conn
+                     //prepares the SQL statement by binding the statement object $stmt with the SQL query $sql
                      $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
                      if ($prepareStmt) {
                       mysqli_stmt_bind_param($stmt, "ss",  $emailF, $messageF);
                          mysqli_stmt_execute($stmt);
                          $success = "Your message was successfully sent!";
                      }else{
-                         die("Something went wrong");
+                         die("Something went wrong");//If there is an error during the statement preparation or execution, the code terminates with the message "Something went wrong" using die().
                      }
                     }
                    
@@ -38,10 +39,10 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
-  <link rel="stylesheet" href="css/service.css">
-  <link rel="stylesheet" href="css/about-us.css">
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="about-us.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="footer.css">
   
 
   
@@ -88,13 +89,14 @@
     </header>
 
     <div class="title">
-        <h2>"Notre seul pouvoir véritable consiste à aider autrui."<br>Dalaï-Lama</h2><br>
+    <h2 class="title2">“We only have what we give.”
+          ― Isabel Allende</h2><br><br>
         <a href="log.php">Donate Now</a>
     </div>
-     <script>
+    <script>
       document.addEventListener("DOMContentLoaded", function() {
         window.addEventListener('scroll', function() {
-          var gap = 50; //Cette valeur représente la distance en pixels depuis le haut de la fenêtre à partir de laquelle nous souhaitons ajouter la classe CSS
+          var gap = 50;
           if (window.scrollY > gap) {
             document.querySelector('header').classList.add('active');
           } else {
@@ -102,7 +104,7 @@
           }
         });
       });
-    </script> 
+    </script>
 
     <br><br>
 
@@ -133,7 +135,7 @@
       <br><br>
 
    <!-- ......Services....... -->   
-   
+
    <div class="services">
     <h1>Our Services</h1>
     <div class="cen">
@@ -173,6 +175,7 @@
     </div>
   
   </div>
+   </div>
   <br><br><br> <br><br><br>
   
     <!-- /features-4 -->
@@ -280,11 +283,12 @@
       </div>
       </div>
     </section>
+</div>
   
     <!--//features-4 -->
 
 <section class="about">
-  <div class="main">
+  <div class="main" >
     <div class="all-text">
       <h4>OUR PARTNER</h4>
       <h1 style="color: black;">The Tunisian Red Crescent</h1>
@@ -296,6 +300,7 @@
     <img  class="im2" src="croissantR.png" >
   </div>
 </section>
+    </div>
   <!--------footer------------>
 <footer>
   <div class="main-content">
